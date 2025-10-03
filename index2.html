@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter text" id="input">
+    <button onclick="fu()">Add task</button>
+    <div id="h1"></div>
+
+    <script>
+       function fu() {
+            let input = document.getElementById("input");
+            let taskText = input.value.trim();
+
+
+        
+            let task = document.createElement("div");
+            task.innerHTML = taskText + 
+                ' <button onclick="d(this)">Delete</button>';
+
+            
+            document.getElementById("h1").appendChild(task);
+
+        
+            input.value = "";
+       }
+
+       function d(val) {
+            val.parentElement.remove(); 
+       }
+    </script>
+</body>
+</html>
